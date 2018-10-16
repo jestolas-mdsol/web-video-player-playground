@@ -1,14 +1,33 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.App {
+  width: 640px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#videoPlayer {
+  display: block;
+}
+
+.totalProgressBar {
+  background-color: #ccc;
+  height: 25px;
+  position: absolute;
+  width: 640px;
+  z-index: 0;
+}
+
+.progressBar {
+  background-color: #4e4e58;
+  height: 25px;
+  position: absolute;
+  width: 640px;
+  z-index: 10;
+}
+
+.upNext {
+  margin: 0;
+  text-align: right;
+}
+
+.videoTimeDisplay {
+  margin: 30px 0 0;
+  text-align: right;
 }
