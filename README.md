@@ -5,7 +5,7 @@
 * A progress bar mimicking the time slider in the video controls
 * Clicking the progress bar will adjust the video's current time intuitively.
 * Time elapsed and total video duration are displayed in minutes:seconds
-* When the video has ten seconds or less remaining, an "up next" notification appears in the bottom-right, displaying the next video's title.
+* When the video has eight seconds or less remaining, an notification appears in the bottom-right, displaying the next video's title.
 * When the video ends, it plays the next video in queue.
 
 #### Video sources:
