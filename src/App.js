@@ -21,7 +21,7 @@ class App extends Component {
     super();
     this.state = {
       timeElapsed: 0,
-      timeRemaining: 0,
+      timeRemaining: 10,
       videoDuration: 0,
       currentVideoIdx: 0,
       nextVideoIdx: 1,
@@ -35,17 +35,17 @@ class App extends Component {
   updateVideoDuration = (e) => {
     this.setState({
       videoDuration: e.target.duration,
+      videoDurationMinutes: Math.floor(e.target.duration / 60),
+      videoDurationSeconds: Math.floor(e.target.duration) % 60,
     })
   }
 
-  updateDurations = (e) => {
+  updateTimeElapsed = (e) => {
     this.setState({
       timeElapsed: e.target.currentTime,
       timeRemaining: e.target.duration - e.target.currentTime,
       timeElapsedMinutes: Math.floor(e.target.currentTime / 60),
       timeElapsedSeconds: Math.floor(e.target.currentTime) % 60,
-      videoDurationMinutes: Math.floor(e.target.duration / 60),
-      videoDurationSeconds: Math.floor(e.target.duration) % 60,
     });
   }
 
@@ -78,7 +78,7 @@ class App extends Component {
           height="auto"
           width={`${progressBarWidth}`}
           src={videoSource}
-          onTimeUpdate={this.updateDurations}
+          onTimeUpdate={this.updateTimeElapsed}
           onPlay={this.updateVideoDuration}
           onEnded={this.updateCurrentlyPlayingVideo}
           controls
@@ -91,7 +91,7 @@ class App extends Component {
         <p className="videoTimeDisplay">
           {this.state.timeElapsedMinutes}:{this.state.timeElapsedSeconds}/{this.state.videoDurationMinutes}:{this.state.videoDurationSeconds}
         </p>
-        {this.state.timeRemaining <= 10 ? <p className="upNext">up next: {nextVideoTitle}</p> : null}
+        {this.state.timeRemaining <= 8 ? <p className="upNext">Next Video: {nextVideoTitle}</p> : null}
       </div>
     );
   }
