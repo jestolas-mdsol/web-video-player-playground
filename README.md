@@ -9,6 +9,7 @@
 * When the video ends, it plays the next video in queue.
 * A second video player with custom controls that can be used in and out of full-screen mode.
   * Has custom controls for play/pause, and full-screen.
+  * Clicking the video or progress bar  will toggle play/pause.
   * Progress bar can be clicked to scan the video.
   * Progress bar now expands correctly in full-screen mode.
   * Controls can be seen and used in full-screen mode.
