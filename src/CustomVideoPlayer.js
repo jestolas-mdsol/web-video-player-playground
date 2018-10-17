@@ -66,12 +66,20 @@ class CustomVideoPlayer extends Component {
 
   toggleFullScreen = () => {
     if (document.webkitIsFullScreen) {
-      this.setState({ inFullScreen: false });
       document.webkitExitFullscreen();
     } else {
-      this.setState({ inFullScreen: true });
       this.state.playerWrapper.webkitRequestFullScreen();
     }
+
+    const maxProgressBar = document.getElementById('controlsMaxProgressBar');
+
+    this.setState({
+      inFullScreen: !document.webkitIsFullScreen,
+    }, () => {
+      setTimeout(() => {
+        this.setState({ currentProgressWidth: (maxProgressBar.offsetWidth/this.state.videoDuration) * this.state.timeElapsed, })
+      }, 100);
+    });
   }
 
   togglePlayPause = () => {
