@@ -31,3 +31,97 @@
   margin: 30px 0 0;
   text-align: right;
 }
+
+/* custom player */
+
+#embeddedVideoPlayer {
+  width: 100%;
+  height: 100%;
+}
+
+#playerWrapper {
+  width: 640px;
+  height: inherit;
+  position: absolute;
+}
+
+.controlsWrapper {
+  background: linear-gradient(#002569, #5e6cb5);
+  bottom: 0;
+  height: 100px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.controlsMaxProgressBar {
+  background-color: #ccc;
+  height: 16px;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+.controlsCurrentProgressBar {
+  background-color: #ffa500;
+  height: 16px;
+  position: absolute;
+  width: 640px;
+  z-index: 10;
+}
+
+.playPauseButton {
+  background-color: #ccc;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  display: inline-block;
+  float: left;
+  height: 50px;
+  margin: 0 16px;
+  text-align: center;
+  width: 50px;
+}
+
+.toggleFullscreen {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+  text-align: center;
+  border: 1px solid #eee;
+  float: right;
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.controlsTimeDisplay {
+  color: #fff;
+  display: inline-block;
+  float: left;
+  margin: 14px 0 0;
+}
+
+.playerButtonsAndTime {
+  margin-top: 30px;
+}
+
+.playSymbol {
+  background: transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 24px solid rgba(75, 83, 88, 0.68);
+  border-top: 12px solid transparent;
+  margin: 12px 0 0 15px;
+  width: 0;
+}
+
+.pauseSymbol {
+  height: 22px;
+  border-left: 26px solid rgba(75, 83, 88, 0.68);
+  border-left-style: double;
+  margin: 13px 0 0 11px;
+}
+
+.mazResizeIcon {
+  font-size: 18px;
+  margin: 15px auto 0;
+}

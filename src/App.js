@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import CustomVideoPlayer from './CustomVideoPlayer.js';
 import dustVideo from './videos/dust.mp4';
 import icebubbleVideo from './videos/icebubble.mp4';
 
@@ -73,6 +74,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h2>Video With Notification And Auto-transition</h2>
         <video
           id="videoPlayer"
           height="auto"
@@ -82,7 +84,6 @@ class App extends Component {
           onPlay={this.updateVideoDuration}
           onEnded={this.updateCurrentlyPlayingVideo}
           controls
-          autoPlay
         />
         <div onClick={this.handleProgressBarClick}>
           <div className="totalProgressBar" />
@@ -92,6 +93,7 @@ class App extends Component {
           {this.state.timeElapsedMinutes}:{this.state.timeElapsedSeconds}/{this.state.videoDurationMinutes}:{this.state.videoDurationSeconds}
         </p>
         {this.state.timeRemaining <= 8 ? <p className="upNext">Next Video: {nextVideoTitle}</p> : null}
+        <CustomVideoPlayer />
       </div>
     );
   }
